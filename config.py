@@ -9,4 +9,4 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = token_bytes()
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
-meraki_org = 'YOUR MERAKI ORG'
+meraki_org = 'YOUR MERAKI ORG NAME'
