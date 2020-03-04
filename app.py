@@ -63,7 +63,7 @@ def register():
         if token:
             user = db.session.query(User).filter(User.token == token).first()
             if user:
-                if user.token == token and datetime.utcnow < user.timestamp:
+                if user.token == token and user.timestamp > datetime.utcnow():
                     try:
                         user.ssid = form.ssid.data
                         user.psk = form.psk.data
