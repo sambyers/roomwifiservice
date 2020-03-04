@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Room Wifi Service
+{% endblock %}
+
+{% block content %}
+  <form method="POST" action="#">
+    {{ form.csrf_token }}
+    
+    {{ form.email.label }}
+    {{ form.email(class="u-full-width", type="email", value=user.email, disabled=True) }}
+
+    {{ form.ssid.label(class="u-full-width") }}
+    {{ form.ssid(class="u-full-width") }}
+
+    {{ form.psk.label(class="u-full-width") }}
+    {{ form.psk(class="u-full-width") }}
+
+    {{ form.submit(class="button-primary") }}
+
+  </form>
+
+{% endblock %}

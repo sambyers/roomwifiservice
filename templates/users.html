@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Room Wifi Service
+{% endblock %}
+
+{% block content %}
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Email</th>
+      <th>Hotel ID</th>
+      <th>Room ID</th>
+      <th>SSID</th>
+      <th>PSK</th>
+      <th>Registration Expiration</th>
+      <th>Wifi Provisioned?</th>
+      <th>Registration Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <form method='POST'>
+      <tr>
+        <td><input class="button-primary" type='submit' value='Delete'></td>
+        <td>{{ form.email(value=user.email, type="hidden") }}{{ user.email }}</td>
+        <td>{{ user.hotelid }}</td>
+        <td>{{ user.roomid }}</td>
+        <td>{{ user.ssid }}</td>
+        <td>{{ user.psk }}</td>
+        <td>{{ user.timestamp }}</td>
+        <td>{{ user.wifiprovisioned }}</td>
+        <td><a href="{{ url_for('register') }}?token={{ user.token }}">Magic Link</a></td>
+      </tr>
+    {% endfor %}
+    {{ form.csrf_token }}
+    </form>
+  </tbody>
+</table>
+
+{% endblock %}
