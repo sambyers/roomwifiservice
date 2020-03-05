@@ -173,3 +173,4 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
+.vscode/settings.json
