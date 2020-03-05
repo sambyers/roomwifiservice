@@ -4,9 +4,11 @@ _Demo POC using Cisco Meraki and a small web app to create and manage room wifi 
 
 ---
 
-This simple project was created to demonstrate an automated and/or semiautomated method to enable personal or room wifi networks for guests. The ideal consumer of this kind of service is a frequent traveler or long term guest that wants an easy way to onboard multiple wifi devices. This service eliminates the need for those guests to configure wifi networks on each device they carry and also could allow their devices to talk to each other.
+This simple project was created to demonstrate an automated and/or semi-automated method to enable personal or room wifi networks for guests. The ideal consumer of this kind of service is a frequent traveler or long term guest that wants an easy way to onboard multiple wifi devices without configuring them.
 
-Many devices like Apple TV or Chromecast use service discovery technologies like mDNS and using an automated process like in this POC would allow a provisioned wifi network to be tunneled to an MX firewall and dropped into a DMZ. This improves service delivery to the customer and network security.
+By allowing a user to configure an SSID and PSK for her room, she can use configuration that may already be saved on all of her devices. This eliminates the need for guests to connect to wifi networks on each device they carry at each hotel, motel, apartment, inn, etc. they stay at.
+
+Many devices like Apple TV or Chromecast use service discovery technologies like mDNS and using an automated process like in this POC would allow a provisioned wifi network to be tunneled to an MX firewall and homed to a guest DMZ. This improves service delivery to the customer and network security.
 
 ## Features
 
@@ -58,6 +60,9 @@ Create a virtual environment _(optional)_
 ```
 python(3) -m venv .venv
 source .venv/bin/activate
+```
+Run the flask app
+```
 python app.py
 ```
 Browse to localhost or the hostname of the server
