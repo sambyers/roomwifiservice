@@ -19,9 +19,11 @@ Many devices like Apple TV or Chromecast use service discovery technologies like
 The components used in this project:
 * [Cisco Meraki cloud managed networking products](https://meraki.cisco.com/)
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Flask WTF](https://flask-wtf.readthedocs.io/en/stable/)
 * [SQLite](https://www.sqlite.org/index.html)
 * [SQLAlchemy ORM](https://www.sqlalchemy.org/)
 * [Meraki Dashboard Python library](https://github.com/meraki/dashboard-api-python/)
+* [Skeleton](http://getskeleton.com/)
 
 ### Cisco Products / Services
 
