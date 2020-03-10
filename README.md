@@ -39,7 +39,7 @@ The components used in this project:
 ### Adding a user
 ![](https://media.giphy.com/media/Pkjsl7dDRHaexqMNR1/giphy.gif)
 
-### Registering a user (magic link could be send to user via email or sms)
+### Registering a user (magic link could be sent to user via email or sms)
 ![](https://media.giphy.com/media/j2G0ASq7TgqTKlqpB8/giphy.gif)
 
 ### Connecting to wifi
