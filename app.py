@@ -103,7 +103,7 @@ def users():
 
 @app.errorhandler(CSRFError)
 def handle_csrf_error(e):
-    return render_template('csrf_error.html', reason=e.description), 400
+    return render_template('csrf_error.html', reason=e.description), 403
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=False)
