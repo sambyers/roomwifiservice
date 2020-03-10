@@ -48,6 +48,9 @@ The components used in this project:
 ### Deleting a user
 ![](https://media.giphy.com/media/VcvcsTlHBqfVi7Zz5m/giphy.gif)
 
+### API Add user
+![](https://media.giphy.com/media/S3yWdj23cx4nknL6KD/giphy.gif)
+
 ## Installation
 ```
 git clone https://github.com/CiscoSE/roomwifiservice
