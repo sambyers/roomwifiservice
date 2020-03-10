@@ -58,9 +58,9 @@ pip install -r requirements.txt
 ```
 Set your Meraki organization name in config.py.
 
-Export your Meraki API key as an environmental variable.
+Export your Meraki API key as an environmental variable
 ```
-export MERAKI_DASHBOARD_API_KEY=006572c2363a46eb1d7b4f230ae1939d7ab07982
+export MERAKI_DASHBOARD_API_KEY=1j7hd9u2363a46eb1d7b4ju87620939d7ab07982
 ```
 
 Create a virtual environment _(optional)_
