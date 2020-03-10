@@ -1,5 +1,5 @@
 from secrets import token_urlsafe
-from flask import render_template, url_for, request, redirect
+from flask import render_template, url_for, request, redirect, jsonify
 from sqlalchemy import exc
 from flask_wtf.csrf import CSRFError
 from forms import AddUserForm, DeleteUserForm, RegisterUserForm
@@ -105,5 +105,25 @@ def users():
 def handle_csrf_error(e):
     return render_template('csrf_error.html', reason=e.description), 403
 
+@app.route('/api/adduser', methods=['POST'])
+@csrf.exempt
+def api_adduser():
+    req_key = request.headers.get('x-api-key')
+    req_data = request.get_json()
+    if req_data and req_key == 'b20f7b36d7430b19326e6bc27c3c31df3ecb0a42fc3a45a48567d527eff03388': # Fake API key for testing. Use your own method for authenticating API requests.
+        token = token_urlsafe()
+        new_user = User(email=req_data['email'],
+                            hotelid=req_data['hotelid'],
+                            roomid=req_data['roomid'],
+                            token=token)
+        db.session.add(new_user)
+        try:
+            db.session.commit()
+        except exc.IntegrityError as e:
+            db.session.rollback()
+            return 'Adding user failed. Are you adding a duplicate user?', 400
+        return jsonify(magiclink=f"https://example.com?token={token}"), 200
+    return 'No request data', 400
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host='0.0.0.0', port=80, debug=True)

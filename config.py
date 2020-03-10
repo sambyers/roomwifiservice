@@ -9,4 +9,5 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = token_bytes()
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
-meraki_org = 'MERAKI ORG NAME'
+meraki_org = 'YOUR MERAKI ORG'
+token_expiration = 1 # Token timeout in hours (int)
