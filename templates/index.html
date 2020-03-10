@@ -1,10 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}
-Room Wifi Service
-{% endblock %}
-
 {% block content %}
+{% include 'nav.html' %}
 <p>This would normally be a REST API for a CRM or other system, but this is just a demo!</p>
 <p>This is a sample application that manages personal or room-based wifi networks for MDUs with Cisco Meraki.</p>
 <p>The MDU might have a wifi AP per room/suite/apartment and a user staying in the room/suite/apartment could use this service to create their own wifi network.</p>

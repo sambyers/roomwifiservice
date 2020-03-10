@@ -1,10 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}
-Room Wifi Service
-{% endblock %}
-
 {% block content %}
+{% include 'nav.html' %}
   <form method="POST" action="#">
     {{ form.csrf_token }}
     
